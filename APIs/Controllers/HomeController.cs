@@ -103,7 +103,14 @@ namespace APIs.Controllers
             ViewBag.name = o["name"].ToString();
             ViewBag.Data = o["sprites"]["front_default"].ToString();
             ViewBag.Type1 = o["types"][0]["type"]["name"].ToString();
-            ViewBag.Type2 = o["types"][1]["type"]["name"].ToString();
+            try
+            {
+                ViewBag.Type2 = o["types"][1]["type"]["name"].ToString();
+            }
+            catch (Exception e)
+            {
+
+            }
             return View("PokeResult");
         }
 
